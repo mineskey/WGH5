@@ -1,3 +1,3 @@
 # WGH5
 
-npm install/cnpm install
+cnpm install/npm install
