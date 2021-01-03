@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Image } from "@tarojs/components";
-import { AtNavBar, AtSegmentedControl, AtTabBar, AtSearchBar } from "taro-ui";
-import "taro-ui/dist/style/index.scss";
+import { } from "taro-ui";
 export default class Template extends Component {
   constructor() {
     super(...arguments);

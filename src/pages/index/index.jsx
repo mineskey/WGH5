@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import { AtTabBar, AtSearchBar } from 'taro-ui'
 import Main from '../../components/main/main'
-import Me from '../../components/me/me'
+import AtMe from '../../components/main/atMe'
+import Console from '../../components/main/console'
+import Me from '../../components/main/me'
 import 'taro-ui/dist/style/index.scss'
 import './index.less'
 
@@ -10,8 +12,8 @@ export default class Index extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-      current: 0,
-      currentBar: 0,
+      current: 1,
+      currentBar: 2,
       search: ''
     }
   }
@@ -32,7 +34,6 @@ export default class Index extends Component {
     })
   }
   handleTabBarClick(value) {
-    console.log(value)
     this.setState({
       currentBar: value
     })
@@ -51,7 +52,7 @@ export default class Index extends Component {
     return (
       <View className='index'>
         {
-          currentBar != 1 ?
+          currentBar == 0 || currentBar == 2 ?
             <AtSearchBar
               fixed
               actionName='搜一下'
@@ -59,9 +60,11 @@ export default class Index extends Component {
               onChange={this.onChange.bind(this)}
               onActionClick={this.onActionClick.bind(this)} /> : ''
         }
-        <View className={currentBar == 1 ? 'content-top' : 'content'}>
+        <View className={currentBar == 1 || currentBar == 3 ? 'content-top' : 'content'}>
           {currentBar == 0 ? <Main /> : ""}
-          {currentBar == 2 ? <Me /> : ""}
+          {currentBar == 1 ? <AtMe /> : ""}
+          {currentBar == 2 ? <Console /> : ""}
+          {currentBar == 3 ? <Me /> : ""}
         </View>
         <AtTabBar
           fixed

@@ -1,38 +1,48 @@
 import React, { Component } from 'react'
-import { View, Text, Image, MovableArea } from '@tarojs/components'
+import { View, Text, Image } from '@tarojs/components'
 import API, { PIC_URL } from '../../constants/api'
-import 'taro-ui/dist/style/index.scss'
+import "./list.less";
 import Item from './item'
+import Join from './join'
+import Own from './own'
 export default class List extends Component {
   constructor() {
     super(...arguments)
     this.state = {
       current: 0,
       currentBar: 0,
-      books: []
+      books: [],
+      tab: { type: 1 }
     }
   }
   componentDidMount() {
     let { tab } = this.props;
-    if (tab && tab.type == 1) {
-      API.homeArticleNew({
-        current: 1
-      }).then((res) => {
-        console.log(res.introductionList)
-        res.introductionList.map(item => {
-          if (item.coverPhoto) item.coverPhoto = PIC_URL + item.coverPhoto;
-        })
-        this.setState({
-          books: res.introductionList
-        })
+    this.setState({ tab: tab });
+    //if (tab && tab.type == 1) {
+    API.homeArticleNew({
+      current: 1
+    }).then((res) => {
+      res.introductionList.map(item => {
+        if (item.coverPhoto) item.coverPhoto = PIC_URL + item.coverPhoto;
       })
-    }
+      this.setState({
+        books: res.introductionList
+      })
+    })
+    // }
   }
   render() {
-    let { books } = this.state;
+    let { books, tab } = this.state;
     return (
       <View>{books.map((item, index) => {
-        return (<Item key={index} item={item} />)
+        return (
+          tab.type == 3 ?
+            <Join key={index} item={item} /> : (
+              tab.type == 4 ?
+                <Own key={index} item={item} /> :
+                <Item key={index} item={item} />
+            )
+        )
       })}
       </View>
     )

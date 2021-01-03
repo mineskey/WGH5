@@ -1,5 +1,4 @@
-@import "//at.alicdn.com/t/font_2036260_0yj74g25z2te.css";
-
+@import "//at.alicdn.com/t/font_2036260_vl1bza3du6.css";
 .padding-none {
   padding: unset !important;
 
@@ -19,14 +18,82 @@
     display: inline-block;
   }
 }
-
 .content {
   width: 100%;
   margin-top: 80px;
   margin-bottom: 108px;
 }
-
 .content-top {
   width: 100%;
   margin-bottom: 108px;
+}
+/**
+*Console
+**/
+.fixed-right-bottom{
+  position: fixed;
+  right: 12PX;
+  bottom: 68PX;
+}
+.at-fab{
+  background: #ff551a;
+  &:active{
+    background: #fd4b0f;
+  }
+}
+.icon-full{
+  .at-nav-bar__container{
+    width: 100%;
+  }
+}
+.edit-content{
+  padding: 12PX;
+  .at-textarea{
+    margin-bottom: 12PX;
+    &.edit-title{
+      .at-textarea__textarea{
+        height: auto;
+        
+      }
+    }
+  }
+}
+/**
+*atMe
+**/
+.atme-title{
+  display: flex;
+  flex-direction: row;
+  //justify-content: space-between;
+  font-size: 16PX;
+  padding-left: 12PX;
+}
+/*
+*ME
+**/
+.me{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14PX;
+  justify-content:center;
+  height: 400PX;
+  margin: auto;
+  max-width: 256PX;
+  line-height:36PX;
+}
+/*
+*公共CSS
+**/
+.outline{
+  padding-right: 12PX;
+  &:after{
+    display: block;
+    margin-top: 2PX;
+    margin-left: 1PX;
+    width: 24PX;
+    height: 4PX;
+    background-color: #f18484;
+    content: '';
+  }
 }

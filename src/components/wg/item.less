@@ -1,0 +1,44 @@
+.topic{
+    padding-top: 12PX;
+    padding-bottom: 12PX;
+    border-bottom: 1PX solid #eee;
+    min-width: 356PX;
+    .head_img{
+      width: 42PX;
+      height: 42PX;
+      float: left;
+      margin-left: 12PX;
+      margin-right: 12PX;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .btn{
+      display: flex;
+      flex-direction: row;
+      justify-content:flex-end;
+      margin-right: 6PX;
+      font-size: 16PX;
+      color: #666;
+      position: relative;
+      .at-icon{
+        margin-right:6PX;
+        z-index: 2;
+      }
+      .btn-reply{
+        position:absolute;
+        z-index: 2;
+        width: 52PX;
+        text-align: right;
+        right: 6PX;
+      }
+    }
+    .row{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      clear: both;
+    }
+  }
+  

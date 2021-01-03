@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, Image } from "@tarojs/components";
 import { AtIcon } from "taro-ui";
 import "./item.less";
-export default class Item extends Component {
+export default class Join extends Component {
   constructor() {
     super(...arguments);
     this.state = {

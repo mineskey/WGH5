@@ -2,7 +2,7 @@
   padding-top: 12PX;
   padding-bottom: 12PX;
   border-bottom: 1PX solid #eee;
-  padding-left: 24PX;
+  padding-left: 12PX;
   display: flex;
   flex-direction: row;
   min-width: 356PX;
@@ -24,7 +24,7 @@
     flex-direction: column;
     justify-content: space-around;
     font-size: 16PX;
-    width: calc(100% - 128PX);
+    width: calc(100% - 123PX);
     .update_title {
       color: rgba(0, 0, 0, 0.8);
       height: 20PX;
@@ -39,6 +39,7 @@
     .update_content {
       font-size: 14PX;
       color: rgba(0, 0, 0, 0.6);
+      text-indent: 2EM;
       //height: 54PX;
       line-height: 18PX;
       overflow: hidden;
@@ -57,5 +58,26 @@
         padding-right: 6PX;
       }
     }
+  }
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .update_title{
+    max-width: calc(100% - 68PX);
+  }
+  .at-tag{
+  }
+}
+.at-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .at-button{
+    display: inline-block;
+  }
+  .at-icon{
+    line-height: 28PX;
   }
 }

@@ -1,0 +1,64 @@
+.msgItem {
+    padding-top: 12PX;
+    padding-bottom: 12PX;
+    border-bottom: 1PX solid #eee;
+    padding-left: 12PX;
+    display: flex;
+    flex-direction: row;
+    min-width: 356PX;
+    .msgImg {
+      width: 42PX;
+      height: 42PX;
+      margin-right: 12PX;
+  
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .msgDes {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      font-size: 12PX;
+      width: calc(100% - 78PX);
+      .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .msg_title {
+            color: rgba(0, 0, 0, 0.6);
+            height: 20PX;
+            line-height: 20PX;
+            max-width: calc(100% - 42PX);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            /*超出1行部分显示省略号，去掉该属性 显示全部*/
+            -webkit-box-orient: vertical;
+        }
+        .msg_time {
+            font-size: 12PX;
+            color: rgba(0, 0, 0, 0.5);
+            .at-icon {
+                padding-right: 6PX;
+            }
+        }
+      }
+      
+      .msg_content {
+        font-size: 14PX;
+        color: rgba(0, 0, 0, 0.8);
+        //height: 54PX;
+        line-height: 18PX;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        /*超出3行部分显示省略号，去掉该属性 显示全部*/
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+  
